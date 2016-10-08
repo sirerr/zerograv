@@ -15,7 +15,7 @@ public class ColliderFollow : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         playerCollider.center = InputTracking.GetLocalPosition(VRNode.Head) + yDiff;
     }
 }
