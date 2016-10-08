@@ -49,7 +49,6 @@ public class SwimPaddle : MonoBehaviour {
         //{
 
             float triggerVal = Mathf.Pow(device.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger).x, 2f);
-        print(triggerVal);
 
             //controllerForce = GetComponent<Rigidbody>().velocity * -forceMult;
             controllerForce = (transform.position - lastControllerPosition) / Time.fixedDeltaTime * -forceMult * triggerVal;

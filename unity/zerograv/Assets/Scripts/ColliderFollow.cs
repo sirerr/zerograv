@@ -1,26 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.VR;
 
 public class ColliderFollow : MonoBehaviour {
 
     private CapsuleCollider playerCollider;
-    private Transform playerTransform;
-    public GameObject cameraHead;
+    private Vector3 yDiff;
 
 	// Use this for initialization
 	void Start () {
-        updatePosition();
+        playerCollider = GetComponent<CapsuleCollider>();
+        yDiff = playerCollider.center;
+        print(yDiff);
     }
 	
 	// Update is called once per frame
 	void Update () {
-        updatePosition();
-	}
-
-    void updatePosition() {
-	    // get the coordinates of the camera
-        playerCollider = GetComponent<CapsuleCollider>();
-        // playerCollider.center = transform.InverseTransformPoint(transform.position);
-        playerCollider.center = cameraHead.transform.position;
+        playerCollider.center = InputTracking.GetLocalPosition(VRNode.Head) + yDiff;
     }
 }
