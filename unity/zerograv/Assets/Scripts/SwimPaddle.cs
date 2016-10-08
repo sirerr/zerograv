@@ -5,6 +5,7 @@ using System.Collections;
 public class SwimPaddle : MonoBehaviour {
 
     public float forceMult = 1;
+    public float torqueMult = 1;
 
     public Transform centerOfMass;
     public Transform playArea;
@@ -44,27 +45,24 @@ public class SwimPaddle : MonoBehaviour {
             Debug.Log("Device not found");
         }
 
-        if (device.GetPress(SteamVR_Controller.ButtonMask.Trigger))
-        {
-            // print("Hello");
+        //if (device.GetTouch(SteamVR_Controller.ButtonMask.Trigger))
+        //{
 
-
-
-
+            float triggerVal = Mathf.Pow(device.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger).x, 2f);
 
             //controllerForce = GetComponent<Rigidbody>().velocity * -forceMult;
-            controllerForce = (transform.position - lastControllerPosition) / Time.fixedDeltaTime * -forceMult;
-            controllerDistance = centerOfMass.position - transform.position;
-            controllerTorque = Vector3.Cross(controllerDistance, controllerForce);
+            controllerForce = (transform.localPosition - lastControllerPosition) / Time.fixedDeltaTime * -forceMult * triggerVal;
+            controllerDistance = transform.position - centerOfMass.position;
+            controllerTorque = Vector3.Cross(controllerDistance, controllerForce/forceMult * torqueMult);
 
-            print(controllerForce);
 
-            playArea.GetComponent<Rigidbody>().AddForce(controllerTorque);
+            playArea.GetComponent<Rigidbody>().AddForce(controllerForce);
             playArea.GetComponent<Rigidbody>().AddTorque(controllerTorque);
 
-        }
+            
+        //}
 
-        lastControllerPosition = transform.position;
+        lastControllerPosition = transform.localPosition;
 
     }
 }
