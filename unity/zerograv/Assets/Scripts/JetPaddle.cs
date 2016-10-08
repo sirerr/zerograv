@@ -2,10 +2,10 @@
 using System.Collections;
 
 [RequireComponent(typeof(SteamVR_TrackedObject))]
-public class SwimPaddle : MonoBehaviour {
+public class JetPaddle : MonoBehaviour
+{
 
     public float forceMult = 1;
-    public float torqueMult = 1;
 
     public Transform centerOfMass;
     public Transform playArea;
@@ -24,14 +24,16 @@ public class SwimPaddle : MonoBehaviour {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
     }
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
     }
 
     void FixedUpdate()
@@ -40,28 +42,29 @@ public class SwimPaddle : MonoBehaviour {
 
         //print("Grip: " + device.GetTouch(SteamVR_Controller.ButtonMask.Grip));
 
-        if(device == null)
+        if (device == null)
         {
             Debug.Log("Device not found");
         }
 
-        //if (device.GetTouch(SteamVR_Controller.ButtonMask.Trigger))
-        //{
+        if (device.GetPress(SteamVR_Controller.ButtonMask.Grip))
+        {
+            // print("Hello");
 
-            float triggerVal = Mathf.Pow(device.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger).x, 2f);
-        print(triggerVal);
+
+
+
 
             //controllerForce = GetComponent<Rigidbody>().velocity * -forceMult;
-            controllerForce = (transform.position - lastControllerPosition) / Time.fixedDeltaTime * -forceMult * triggerVal;
-            controllerDistance = transform.position - centerOfMass.position;
-            controllerTorque = Vector3.Cross(controllerDistance, controllerForce/forceMult * torqueMult);
+            controllerForce = (transform.position - lastControllerPosition) / Time.fixedDeltaTime * -forceMult;
+            controllerDistance = centerOfMass.position - transform.position;
+            controllerTorque = Vector3.Cross(controllerDistance, controllerForce);
 
 
-            playArea.GetComponent<Rigidbody>().AddForce(controllerForce);
-            playArea.GetComponent<Rigidbody>().AddTorque(controllerTorque);
+            playArea.GetComponent<Rigidbody>().AddForce(transform.rotation*Vector3.forward * -forceMult);
+            // playArea.GetComponent<Rigidbody>().AddTorque(controllerTorque);
 
-            
-        //}
+        }
 
         lastControllerPosition = transform.position;
 
