@@ -11,7 +11,6 @@ public class ColliderFollow : MonoBehaviour {
 	void Start () {
         playerCollider = GetComponent<CapsuleCollider>();
         yDiff = playerCollider.center;
-        print(yDiff);
     }
 	
 	// Update is called once per frame
