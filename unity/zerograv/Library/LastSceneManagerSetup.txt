@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/scenes/testArea_platformHop.unity
+- path: Assets/scenes/NetworkBallThrow.unity
   isLoaded: 1
   isActive: 1
