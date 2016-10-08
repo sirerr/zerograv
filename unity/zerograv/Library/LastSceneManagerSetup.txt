@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/scenes/testarea0.unity
+- path: Assets/scenes/SwimTest.unity
   isLoaded: 1
   isActive: 1
