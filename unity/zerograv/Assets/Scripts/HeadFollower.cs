@@ -4,6 +4,9 @@ using UnityEngine.VR;
 
 public class HeadFollower : MonoBehaviour {
 
+    public float disappearVelocity = 0.5f;
+    public Transform particles;
+
     private Vector3 diff;
     private Vector3 lastPosition;
 
@@ -14,17 +17,16 @@ public class HeadFollower : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        diff = (transform.position - lastPosition) / Time.fixedDeltaTime;
+        Quaternion q = new Quaternion();
+        if (diff.magnitude < disappearVelocity) {
+            particles.gameObject.SetActive(false);
+        } else {
+            particles.gameObject.SetActive(true);
+            q.SetLookRotation(diff);
+        }
+        transform.rotation = q;
+        lastPosition = transform.position;
 	}
 
-    void FixedUpdate() {
-        diff = (transform.parent.transform.position - lastPosition) / Time.fixedDeltaTime;
-        Quaternion q = new Quaternion();
-        //if (diff.magnitude < 1) {
-          //  q = InputTracking.GetLocalRotation(VRNode.Head);
-        //} else {
-            q.SetLookRotation(diff);
-        //}
-        transform.parent.transform.rotation = q;
-        lastPosition = transform.parent.transform.position;
-    }
 }
