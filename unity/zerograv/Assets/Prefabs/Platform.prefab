@@ -63,7 +63,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 444816}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!4 &444816
 Transform:
   m_ObjectHideFlags: 1
@@ -75,9 +75,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 4000012697234344}
   - {fileID: 453916}
   - {fileID: 411536}
-  - {fileID: 4000012613693254}
+  - {fileID: 4000013722912758}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &453916
@@ -92,7 +93,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 444816}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!23 &2349676
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -200,49 +201,78 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 132580}
   m_IsPrefabParent: 1
---- !u!1 &1000012443350128
+--- !u!1 &1000013512108800
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 4000012613693254}
-  - 33: {fileID: 33000011552437376}
-  - 23: {fileID: 23000010126793142}
-  - 54: {fileID: 54000011419937154}
-  - 65: {fileID: 65000010377075950}
-  - 114: {fileID: 114000011772347324}
-  - 114: {fileID: 114000012052742866}
-  - 114: {fileID: 114000013564211184}
-  - 114: {fileID: 114000012445888468}
-  - 114: {fileID: 114000011950782128}
+  - 4: {fileID: 4000013722912758}
+  - 33: {fileID: 33000012534877390}
+  - 23: {fileID: 23000012626293388}
+  - 54: {fileID: 54000011520039952}
+  - 65: {fileID: 65000011582858920}
+  - 114: {fileID: 114000010454054270}
+  - 114: {fileID: 114000013281466496}
+  - 114: {fileID: 114000013651988180}
+  - 114: {fileID: 114000013694353946}
+  - 114: {fileID: 114000012590966774}
   m_Layer: 0
-  m_Name: Disc
+  m_Name: Disc_Main
   m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!1 &1000013708596866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012697234344}
+  - 114: {fileID: 114000012314316808}
+  m_Layer: 0
+  m_Name: DiscSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4000012613693254
+--- !u!4 &4000012697234344
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012443350128}
+  m_GameObject: {fileID: 1000013708596866}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.031, y: 1.087, z: 1.253}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 444816}
+  m_RootOrder: 0
+--- !u!4 &4000013722912758
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013512108800}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.023, y: 1.098, z: 1.221}
   m_LocalScale: {x: 8.870737, y: 8.870735, z: 8.870735}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 444816}
-  m_RootOrder: 2
---- !u!23 &23000010126793142
+  m_RootOrder: 3
+--- !u!23 &23000012626293388
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012443350128}
+  m_GameObject: {fileID: 1000013512108800}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -266,19 +296,19 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &33000011552437376
+--- !u!33 &33000012534877390
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012443350128}
+  m_GameObject: {fileID: 1000013512108800}
   m_Mesh: {fileID: 4300000, guid: 35a91cf86ee7bab41ba03415f9f17b21, type: 3}
---- !u!54 &54000011419937154
+--- !u!54 &54000011520039952
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012443350128}
+  m_GameObject: {fileID: 1000013512108800}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -288,24 +318,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65000010377075950
+--- !u!65 &65000011582858920
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012443350128}
+  m_GameObject: {fileID: 1000013512108800}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.040019497, y: 0.005215126, z: 0.03999339}
   m_Center: {x: 9.313226e-10, y: 0.0000025873305, z: -9.313226e-10}
---- !u!114 &114000011772347324
+--- !u!114 &114000010454054270
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012443350128}
+  m_GameObject: {fileID: 1000013512108800}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
@@ -343,24 +373,36 @@ MonoBehaviour:
   allowedUseControllers: 0
   hideControllerOnUse: 0
   usingState: 0
---- !u!114 &114000011950782128
+--- !u!114 &114000012314316808
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012443350128}
+  m_GameObject: {fileID: 1000013708596866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8641363809cff014fbc497a909235886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pubDisc: {fileID: 1000011471408964, guid: 39030a01f311d9d41925457fbe75a04f, type: 2}
+--- !u!114 &114000012590966774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013512108800}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3999c0a5264f3c48baf8cf0fca84b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lift: 0
---- !u!114 &114000012052742866
+--- !u!114 &114000013281466496
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012443350128}
+  m_GameObject: {fileID: 1000013512108800}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d45c8d32f1d960d4498790bb3961fc52, type: 3}
@@ -382,12 +424,27 @@ MonoBehaviour:
     touchpad: {fileID: 0}
     appMenu: {fileID: 0}
     systemMenu: {fileID: 0}
---- !u!114 &114000012445888468
+--- !u!114 &114000013651988180
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012443350128}
+  m_GameObject: {fileID: 1000013512108800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64e104da36bd3b04b90c6ae969ac66dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideControllerOnTouch: 0
+  hideControllerDelay: 0
+  globalTouchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  customRigidbodyObject: {fileID: 0}
+--- !u!114 &114000013694353946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013512108800}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eba3cd5456cd79e49948f5ceb58544b4, type: 3}
@@ -416,18 +473,3 @@ MonoBehaviour:
   usePressed: 0
   uiClickPressed: 0
   menuPressed: 0
---- !u!114 &114000013564211184
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012443350128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e104da36bd3b04b90c6ae969ac66dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hideControllerOnTouch: 0
-  hideControllerDelay: 0
-  globalTouchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
-  customRigidbodyObject: {fileID: 0}

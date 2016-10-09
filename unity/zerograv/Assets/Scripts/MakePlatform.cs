@@ -19,7 +19,6 @@ public class MakePlatform : MonoBehaviour {
 	{
         if (col.gameObject.tag == "Ball")
         {
-            Debug.Log("There was collision!");
             Instantiate(platform, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
