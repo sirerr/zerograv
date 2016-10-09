@@ -4,17 +4,19 @@ using UnityEngine.VR;
 
 public class ColliderFollow : MonoBehaviour {
 
-    private CapsuleCollider playerCollider;
+    private BoxCollider playerCollider;
     private Vector3 yDiff;
 
 	// Use this for initialization
 	void Start () {
-        playerCollider = GetComponent<CapsuleCollider>();
+        playerCollider = GetComponent<BoxCollider>();
         yDiff = playerCollider.center;
     }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        playerCollider.center = InputTracking.GetLocalPosition(VRNode.Head) + yDiff;
+        Vector3 headPos = InputTracking.GetLocalPosition(VRNode.Head);
+        headPos.y = 0;
+        playerCollider.center = headPos;
     }
 }

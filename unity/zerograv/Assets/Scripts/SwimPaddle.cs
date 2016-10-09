@@ -45,13 +45,13 @@ public class SwimPaddle : MonoBehaviour {
             Debug.Log("Device not found");
         }
 
-        //if (device.GetTouch(SteamVR_Controller.ButtonMask.Trigger))
-        //{
+        if (device.GetTouch(SteamVR_Controller.ButtonMask.Trigger))
+        {
 
-            float triggerVal = Mathf.Pow(device.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger).x, 2f);
+            // float triggerVal = Mathf.Pow(device.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger).x, 2f);
 
             //controllerForce = GetComponent<Rigidbody>().velocity * -forceMult;
-            controllerForce = (transform.localPosition - lastControllerPosition) / Time.fixedDeltaTime * -forceMult * triggerVal;
+            controllerForce = (transform.position - lastControllerPosition) / Time.fixedDeltaTime * -forceMult;// * triggerVal;
             controllerDistance = transform.position - centerOfMass.position;
             controllerTorque = Vector3.Cross(controllerDistance, controllerForce/forceMult * torqueMult);
 
@@ -60,9 +60,9 @@ public class SwimPaddle : MonoBehaviour {
             playArea.GetComponent<Rigidbody>().AddTorque(controllerTorque);
 
             
-        //}
+        }
 
-        lastControllerPosition = transform.localPosition;
+        lastControllerPosition = transform.position;
 
     }
 }
