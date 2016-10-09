@@ -104,11 +104,11 @@ public class SwimPaddle : MonoBehaviour {
 
 				controllerForce = globalVelocity * finalSpeed * -forceMult;// * triggerVal;
 				controllerDistance = transform.position - centerOfMass.position;
-				controllerTorque = Vector3.Cross (controllerDistance, controllerForce / forceMult * torqueMult);
+				//controllerTorque = Vector3.Cross (controllerDistance, controllerForce / forceMult * torqueMult);
 
 
 				playArea.AddForce (controllerForce);
-				playArea.AddTorque (controllerTorque);
+				//playArea.AddTorque (controllerTorque);
 			} else {
 				isSwimming = false;
 			}

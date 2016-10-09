@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: TiltbrushThickPaintGreen
+  m_Name: TiltbrushPaperGray
   m_Shader: {fileID: 4800000, guid: 7768dde3aa7bd2748819752f4b10a521, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
@@ -18,7 +18,7 @@ Material:
     - first:
         name: _BumpMap
       second:
-        m_Texture: {fileID: 2800000, guid: c3325c182590d5741ade093ee0be1889, type: 3}
+        m_Texture: {fileID: 2800000, guid: be5548fda8436b041932250facb7a255, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -48,7 +48,7 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: f54b18c78dc8c8d449f31419d8acdd1e, type: 3}
+        m_Texture: {fileID: 2800000, guid: afdbcbfcf447d13449287452cf3a8c16, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -105,7 +105,7 @@ Material:
       second: 0.02
     - first:
         name: _Shininess
-      second: 0.078125
+      second: 0.507
     - first:
         name: _SmoothnessTextureChannel
       second: 0
@@ -124,7 +124,7 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0, g: 0.89705884, b: 0.15466535, a: 1}
+      second: {r: 0.6397059, g: 0.6397059, b: 0.6397059, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
