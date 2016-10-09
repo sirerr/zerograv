@@ -171,9 +171,9 @@ MonoBehaviour:
   hideControllerOnTouch: 0
   isGrabbable: 1
   isDroppable: 1
-  isSwappable: 1
+  isSwappable: 0
   holdButtonToGrab: 1
-  grabOverrideButton: 4
+  grabOverrideButton: 2
   rumbleOnGrab: {x: 0, y: 0}
   allowedGrabControllers: 0
   precisionSnap: 0

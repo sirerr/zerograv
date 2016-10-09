@@ -46,7 +46,7 @@
 
 			o.Emission = tex2D(_MainTex, IN.uv_MainTex) * _Color * _Emission * fade;
 
-			o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
+			o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap);)
 
 			
 

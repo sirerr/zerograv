@@ -19,8 +19,10 @@ public class MakePlatform : MonoBehaviour {
 	{
         if (col.gameObject.tag == "Ball")
         {
+
             Instantiate(platform, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
 	}
+
 }

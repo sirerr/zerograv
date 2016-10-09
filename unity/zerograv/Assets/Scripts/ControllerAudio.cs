@@ -9,10 +9,13 @@ public class ControllerAudio : MonoBehaviour {
 	//when swimming
 	public AudioClip audioClipSwim;
 
+    public float maxVelocity = 10;
+
 	private SwimPaddle swimPaddleRef;
+    private Vector3 lastControllerPosition;
 
 
-	public void Awake()
+    public void Awake()
 	{
 		swimPaddleRef = GetComponent<SwimPaddle>();
 		aSource = GetComponent<AudioSource>();
@@ -32,7 +35,12 @@ public class ControllerAudio : MonoBehaviour {
 		{
 			aSource.PlayOneShot(audioClipSwim);
 			aSource.loop = true;
-		}
+            Vector3 velocity = (transform.localPosition - lastControllerPosition) / Time.deltaTime;
 
-	}
+            aSource.volume = velocity.magnitude / maxVelocity;
+        }
+
+        lastControllerPosition = transform.localPosition;
+
+    }
 }
