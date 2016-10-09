@@ -2906,9 +2906,64 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 1595672466}
+    - target: {fileID: 114000012456759262, guid: 826cc85ead74c7549a84b0f2bb3436eb,
+        type: 2}
+      propertyPath: playArea
+      value: 
+      objectReference: {fileID: 409166550}
+    - target: {fileID: 114000011289177342, guid: 826cc85ead74c7549a84b0f2bb3436eb,
+        type: 2}
+      propertyPath: playArea
+      value: 
+      objectReference: {fileID: 409166550}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 826cc85ead74c7549a84b0f2bb3436eb, type: 2}
   m_IsPrefabParent: 0
+--- !u!54 &409166550 stripped
+Rigidbody:
+  m_PrefabParentObject: {fileID: 54000012604938540, guid: 826cc85ead74c7549a84b0f2bb3436eb,
+    type: 2}
+  m_PrefabInternal: {fileID: 409166549}
+--- !u!1 &409166551 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000010297437994, guid: 826cc85ead74c7549a84b0f2bb3436eb,
+    type: 2}
+  m_PrefabInternal: {fileID: 409166549}
+--- !u!1 &409166552 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000011556985998, guid: 826cc85ead74c7549a84b0f2bb3436eb,
+    type: 2}
+  m_PrefabInternal: {fileID: 409166549}
+--- !u!114 &409166553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 409166551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 114cbc8a25671dd40aad0c7056465731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  depleteTime: 5
+  rechargeTime: 15
+  lowPowerPercent: 0.1
+  actualPowerPercent: 1
+--- !u!114 &409166554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 409166552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 114cbc8a25671dd40aad0c7056465731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  depleteTime: 5
+  rechargeTime: 15
+  lowPowerPercent: 0.1
+  actualPowerPercent: 1
 --- !u!1 &413408839
 GameObject:
   m_ObjectHideFlags: 0
