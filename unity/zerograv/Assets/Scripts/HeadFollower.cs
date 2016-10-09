@@ -23,7 +23,7 @@ public class HeadFollower : MonoBehaviour {
             particles.gameObject.SetActive(false);
         } else {
             particles.gameObject.SetActive(true);
-            q.SetLookRotation(diff);
+            q.SetLookRotation(-diff);
         }
         transform.rotation = q;
         lastPosition = transform.position;
