@@ -2710,7 +2710,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.8228393, y: 2, z: 1.2457058}
+  m_Size: {x: 1.9, y: 2, z: 1.97}
   m_Center: {x: 0.12296772, y: -0.21, z: -0.046699524}
 --- !u!65 &65000013956812552
 BoxCollider:
@@ -2735,7 +2735,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2b5dac4e3c810974792cbd34e527f13b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.185
+  m_Volume: 0.09
   m_Pitch: 1
   Loop: 1
   Mute: 0
